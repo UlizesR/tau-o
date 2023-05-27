@@ -8,7 +8,6 @@ import commands
 load_dotenv()
 
 
-
 # Usage
 parser = argparse.ArgumentParser(description='Manage chatbot conversations.')
 parser.add_argument(commands.CHAT_NAME, type=str, help=commands.COMMANDS_HELP[commands.CHAT_NAME])
