@@ -40,7 +40,8 @@ def init_chat(chat_name):
 def list_chats():
     user_chats = chat.get_chats()  # Use the correct function name
     
-    chat_names = [chat[0] for chat in user_chats]  # Use an integer index instead of a string ke
+    chat_names = [chat[0] for chat in user_chats]  # Use an integer index instead of a string key
+    print('Click the chat you want to start or click exit to exit')
     questions = [
         inquirer.List('List Chats',
                       message="Your Chats",
@@ -76,6 +77,13 @@ if __name__ == "__main__":
             init_chat(chat_name)
         elif args[1] == cmd.LIST_CHATS:
             list_chats()
+        elif args[1] == cmd.DELETE_CHAT:
+            if len(args) < 3:
+                print("missing argument. Usage: taulo --delete_chat <chat_name>")
+                exit()
+            chat_name = args[2]
+            chat.get_chat(chat_name)
+            chat.delete_chat(chat_name)
         else:
             # if a command is given that is not recognized, it prints a message saying that the command was not found
             print("Command not recognized, type 'taulo --help' for a help.")

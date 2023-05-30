@@ -1,5 +1,5 @@
 import os
-from colorama import init, Fore, Style
+from colorama import Fore, Style
 from dotenv import load_dotenv
 import halo
 
