@@ -1,0 +1,9 @@
+openai
+psycopg
+psycopg2
+PyYAML
+inquirer
+halo
+langchain
+colorama
+python-dotenv
